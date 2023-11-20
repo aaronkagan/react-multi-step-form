@@ -39,7 +39,6 @@ const Navigation = ({ step, setStep }) => {
 const StyledSection = styled.section`
   font-size: 1.4rem;
   font-weight: 500;
-  max-width: 42.5rem;
   height: 7.2rem;
   width: 100%;
   background-color: #fff;
@@ -53,6 +52,7 @@ const StyledSection = styled.section`
     justify-content: space-between;
     align-items: center;
     width: 95%;
+    max-width: 42.5rem;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
