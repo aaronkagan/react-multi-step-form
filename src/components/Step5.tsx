@@ -26,8 +26,8 @@ const Step5 = () => {
           fill="white"
         />
       </svg>
-      <h1>Thank you!</h1>
-      <p>
+      <h1 className="title">Thank you!</h1>
+      <p className="text">
         Thanks for confirming your subscription! We hope you have fun using our
         platform. If you ever need support, please feel free to email us at
         support@loremgaming.com.
@@ -44,6 +44,20 @@ const StyledArticle = styled.article`
   margin: 0 auto;
   background-color: #fff;
   transform: translateY(-7rem);
+  text-align: center;
+
+  .title {
+    font-size: 2.4rem;
+    margin-bottom: 0.9rem;
+    color: #022959;
+  }
+
+  .text {
+    color: #9699aa;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    margin-bottom: 2.2rem;
+  }
 `;
 
 export default Step5;

@@ -2,8 +2,10 @@ import styled from 'styled-components';
 const Step4 = () => {
   return (
     <StyledArticle>
-      <h1>Finishing up</h1>
-      <p>Double-check everything looks OK before confirming.</p>
+      <h1 className="title">Finishing up</h1>
+      <p className="text">
+        Double-check everything looks OK before confirming.
+      </p>
       <div>
         <div>
           <div>
@@ -38,5 +40,18 @@ const StyledArticle = styled.article`
   margin: 0 auto;
   background-color: #fff;
   transform: translateY(-7rem);
+
+  .title {
+    font-size: 2.4rem;
+    margin-bottom: 0.9rem;
+    color: #022959;
+  }
+
+  .text {
+    color: #9699aa;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    margin-bottom: 2.2rem;
+  }
 `;
 export default Step4;

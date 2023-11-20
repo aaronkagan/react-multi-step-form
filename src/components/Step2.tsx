@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const Step2 = () => {
   return (
     <StyledArticle>
-      <h1>Select Your Plan</h1>
-      <p>You have the option of monthly or yearly billing.</p>
+      <h1 className="title">Select Your Plan</h1>
+      <p className="text">You have the option of monthly or yearly billing.</p>
       <div>
         <article>
           <h3>Arcade</h3>
@@ -38,6 +38,19 @@ const StyledArticle = styled.article`
   margin: 0 auto;
   background-color: #fff;
   transform: translateY(-7rem);
+
+  .title {
+    font-size: 2.4rem;
+    margin-bottom: 0.9rem;
+    color: #022959;
+  }
+
+  .text {
+    color: #9699aa;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    margin-bottom: 2.2rem;
+  }
 `;
 
 export default Step2;

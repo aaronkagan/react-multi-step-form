@@ -2,8 +2,8 @@ import styled from 'styled-components';
 const Step3 = () => {
   return (
     <StyledArticle>
-      <h1>Pick add-ons</h1>
-      <p>Add-ons help enhance your gaming experience.</p>
+      <h1 className="title">Pick add-ons</h1>
+      <p className="text">Add-ons help enhance your gaming experience.</p>
 
       <div>
         <article>
@@ -55,6 +55,19 @@ const StyledArticle = styled.article`
   margin: 0 auto;
   background-color: #fff;
   transform: translateY(-7rem);
+
+  .title {
+    font-size: 2.4rem;
+    margin-bottom: 0.9rem;
+    color: #022959;
+  }
+
+  .text {
+    color: #9699aa;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    margin-bottom: 2.2rem;
+  }
 `;
 
 export default Step3;
