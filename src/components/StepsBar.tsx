@@ -1,6 +1,8 @@
+import styled from 'styled-components';
+
 const StepsBar = ({ step }) => {
   return (
-    <aside>
+    <StyledAside>
       <div>
         <span style={{ backgroundColor: step >= 1 ? '#BEE2FD' : '' }}>1</span>
         <div>
@@ -29,8 +31,14 @@ const StepsBar = ({ step }) => {
           <span>Summary</span>
         </div>
       </div>
-    </aside>
+    </StyledAside>
   );
 };
+
+const StyledAside = styled.aside`
+  background-image: url('/public/assets/images/bg-sidebar-mobile.svg');
+  background-size: cover;
+  min-height: 17.2rem;
+`;
 
 export default StepsBar;
