@@ -10,7 +10,7 @@ const Navigation = ({ step, setStep }) => {
   };
 
   return (
-    <StyledSection>
+    <StyledNav>
       <div className="container">
         {step !== 1 && step !== 5 ? (
           <button
@@ -32,11 +32,11 @@ const Navigation = ({ step, setStep }) => {
           </button>
         )}
       </div>
-    </StyledSection>
+    </StyledNav>
   );
 };
 
-const StyledSection = styled.section`
+const StyledNav = styled.nav`
   font-size: 1.4rem;
   font-weight: 500;
   height: 7.2rem;
