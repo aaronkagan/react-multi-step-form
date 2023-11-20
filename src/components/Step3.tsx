@@ -6,41 +6,44 @@ const Step3 = () => {
       <p className="text">Add-ons help enhance your gaming experience.</p>
 
       <div>
-        <article>
+        <article className="card active">
           <input
             type="checkbox"
             name=""
             id=""
+            checked
           />
-          <div>
-            <h3>Online Services</h3>
-            <p>Access to multiplayer games</p>
+          <div className="card-text-container">
+            <h3 className="card-title">Online Services</h3>
+            <p className="card-text">Access to multiplayer games</p>
           </div>
-          <span>+$1/mo</span>
+          <span className="card-price">+$1/mo</span>
         </article>
-        <article>
+        <article className="card active">
           <input
             type="checkbox"
             name=""
             id=""
+            checked
           />
-          <div>
-            <h3>Larger storage</h3>
-            <p>Extra 1TB of cloud save</p>
+          <div className="card-text-container">
+            <h3 className="card-title">Larger storage</h3>
+            <p className="card-text">Extra 1TB of cloud save</p>
           </div>
-          <span>+$2/mo</span>
+          <span className="card-price">+$2/mo</span>
         </article>
-        <article>
+        <article className="card">
           <input
             type="checkbox"
             name=""
             id=""
+            checked={false}
           />
-          <div>
-            <h3>Customizable profile</h3>
-            <p>Custom theme on your profile</p>
+          <div className="card-text-container">
+            <h3 className="card-title">Customizable profile</h3>
+            <p className="card-text">Custom theme on your profile</p>
           </div>
-          <span>+$2/month</span>
+          <span className="card-price">+$2/mo</span>
         </article>
       </div>
     </StyledArticle>
@@ -68,6 +71,57 @@ const StyledArticle = styled.article`
     font-size: 1.6rem;
     line-height: 2.5rem;
     margin-bottom: 2.2rem;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 1.3rem 1.6rem;
+    border-radius: 0.8rem;
+    border: 1px solid #d6d9e6;
+
+    input[type='checkbox'] {
+      width: 2rem;
+      height: 2rem;
+      accent-color: #483eff;
+      cursor: pointer;
+    }
+
+    .card-text-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+
+      .card-title {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: #022959;
+      }
+      .card-text {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        font-weight: 400;
+        color: #9699aa;
+      }
+    }
+
+    .card-price {
+      margin-right: 0;
+      margin-left: auto;
+      color: #483eff;
+      line-height: 2rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  .card:not(:last-child) {
+    margin-bottom: 1.2rem;
+  }
+
+  .card.active {
+    background-color: #f8f9ff;
+    border: 1px solid #483eff;
   }
 `;
 
