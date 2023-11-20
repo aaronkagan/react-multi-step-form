@@ -37,7 +37,7 @@ const Step5 = () => {
 };
 
 const StyledArticle = styled.article`
-  padding: 3.2rem 2.4rem;
+  padding: 7.5rem 2.4rem;
   border-radius: 1rem;
   width: 95%;
   max-width: 34.3rem;
@@ -45,6 +45,10 @@ const StyledArticle = styled.article`
   background-color: #fff;
   transform: translateY(-7rem);
   text-align: center;
+
+  svg {
+    margin-bottom: 2.4rem;
+  }
 
   .title {
     font-size: 2.4rem;
