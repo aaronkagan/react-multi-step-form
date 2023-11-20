@@ -10,8 +10,10 @@ const Navigation = ({ step, setStep }) => {
   return (
     <section>
       <div>
-        <button onClick={handlePreviousStep}>Go back</button>
-        <button onClick={handleNextStep}>Next Step</button>
+        {step !== 1 && step !== 5 && (
+          <button onClick={handlePreviousStep}>Go Back</button>
+        )}
+        {step !== 5 && <button onClick={handleNextStep}>Next Step</button>}
       </div>
     </section>
   );
