@@ -1,6 +1,7 @@
+import styled from 'styled-components';
 const Step5 = () => {
   return (
-    <article>
+    <StyledArticle>
       <svg
         width="80"
         height="80"
@@ -31,8 +32,18 @@ const Step5 = () => {
         platform. If you ever need support, please feel free to email us at
         support@loremgaming.com.
       </p>
-    </article>
+    </StyledArticle>
   );
 };
+
+const StyledArticle = styled.article`
+  padding: 3.2rem 2.4rem;
+  border-radius: 1rem;
+  width: 95%;
+  max-width: 34.3rem;
+  margin: 0 auto;
+  background-color: #fff;
+  transform: translateY(-7rem);
+`;
 
 export default Step5;

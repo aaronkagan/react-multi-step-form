@@ -1,6 +1,7 @@
+import styled from 'styled-components';
 const Step3 = () => {
   return (
-    <article>
+    <StyledArticle>
       <h1>Pick add-ons</h1>
       <p>Add-ons help enhance your gaming experience.</p>
 
@@ -42,8 +43,18 @@ const Step3 = () => {
           <span>+$2/month</span>
         </article>
       </div>
-    </article>
+    </StyledArticle>
   );
 };
+
+const StyledArticle = styled.article`
+  padding: 3.2rem 2.4rem;
+  border-radius: 1rem;
+  width: 95%;
+  max-width: 34.3rem;
+  margin: 0 auto;
+  background-color: #fff;
+  transform: translateY(-7rem);
+`;
 
 export default Step3;

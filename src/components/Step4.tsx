@@ -1,6 +1,7 @@
+import styled from 'styled-components';
 const Step4 = () => {
   return (
-    <article>
+    <StyledArticle>
       <h1>Finishing up</h1>
       <p>Double-check everything looks OK before confirming.</p>
       <div>
@@ -25,8 +26,17 @@ const Step4 = () => {
         <span>Total (per month)</span>
         <span>+$12/mo</span>
       </div>
-    </article>
+    </StyledArticle>
   );
 };
 
+const StyledArticle = styled.article`
+  padding: 3.2rem 2.4rem;
+  border-radius: 1rem;
+  width: 95%;
+  max-width: 34.3rem;
+  margin: 0 auto;
+  background-color: #fff;
+  transform: translateY(-7rem);
+`;
 export default Step4;

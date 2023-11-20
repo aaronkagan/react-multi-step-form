@@ -1,6 +1,8 @@
+import styled from 'styled-components';
+
 const Step2 = () => {
   return (
-    <article>
+    <StyledArticle>
       <h1>Select Your Plan</h1>
       <p>You have the option of monthly or yearly billing.</p>
       <div>
@@ -24,8 +26,18 @@ const Step2 = () => {
         </div>
         <span>Yearly</span>
       </div>
-    </article>
+    </StyledArticle>
   );
 };
+
+const StyledArticle = styled.article`
+  padding: 3.2rem 2.4rem;
+  border-radius: 1rem;
+  width: 95%;
+  max-width: 34.3rem;
+  margin: 0 auto;
+  background-color: #fff;
+  transform: translateY(-7rem);
+`;
 
 export default Step2;
