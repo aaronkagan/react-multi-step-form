@@ -42,6 +42,7 @@ const StyledArticle = styled.article`
   margin: 0 auto;
   background-color: #fff;
   transform: translateY(-7rem);
+  margin-bottom: 2.4rem;
 
   .title {
     font-size: 2.4rem;

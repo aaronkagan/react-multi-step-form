@@ -26,6 +26,7 @@ const StyledArticle = styled.article`
   background-color: #fff;
   transform: translateY(-7rem);
   text-align: center;
+  margin-bottom: 2.4rem;
 
   .img {
     margin-bottom: 2.4rem;
