@@ -14,7 +14,7 @@ const Navigation = ({ step, setStep }) => {
       {step !== 5 && (
         <StyledNav>
           <div className="container">
-            {step !== 1 && step !== 5 ? (
+            {step !== 1 ? (
               <button
                 className="previous"
                 onClick={handlePreviousStep}
@@ -25,14 +25,13 @@ const Navigation = ({ step, setStep }) => {
               // Empty div for consistent positioning
               <div></div>
             )}
-            {step !== 5 && (
-              <button
-                className="next"
-                onClick={handleNextStep}
-              >
-                Next Step
-              </button>
-            )}
+
+            <button
+              className="next"
+              onClick={handleNextStep}
+            >
+              Next Step
+            </button>
           </div>
         </StyledNav>
       )}
