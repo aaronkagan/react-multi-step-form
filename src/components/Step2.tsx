@@ -6,25 +6,46 @@ const Step2 = () => {
       <h1 className="title">Select Your Plan</h1>
       <p className="text">You have the option of monthly or yearly billing.</p>
       <div>
-        <article>
-          <h3>Arcade</h3>
-          <span>$9/mo</span>
+        <article className="card active">
+          <img
+            className="icon"
+            src="public/assets/images/icon-arcade.svg"
+            alt="Arcade Icon"
+          />
+          <div className="card-text-container">
+            <h3 className="card-title">Arcade</h3>
+            <span className="card-text">$9/mo</span>
+          </div>
         </article>
-        <article>
-          <h3>Advanced</h3>
-          <span>$12/mo</span>
+        <article className="card">
+          <img
+            className="icon"
+            src="public/assets/images/icon-advanced.svg"
+            alt="Advanced Icon"
+          />
+          <div className="card-text-container">
+            <h3 className="card-title">Advanced</h3>
+            <span className="card-text">$12/mo</span>
+          </div>
         </article>
-        <article>
-          <h3>Pro</h3>
-          <span>$15/mo</span>
+        <article className="card">
+          <img
+            className="icon"
+            src="public/assets/images/icon-pro.svg"
+            alt="Pro Icon"
+          />
+          <div className="card-text-container">
+            <h3 className="card-title">Pro</h3>
+            <span className="card-text">$15/mo</span>
+          </div>
         </article>
       </div>
-      <div>
-        <span>Monthly</span>
-        <div>
-          <div>TOGGLE</div>
+      <div className="toggle-container">
+        <span className="toggle-text active">Monthly</span>
+        <div className="toggle-outer">
+          <div className="toggle-inner"></div>
         </div>
-        <span>Yearly</span>
+        <span className="toggle-text">Yearly</span>
       </div>
     </StyledArticle>
   );
@@ -38,6 +59,7 @@ const StyledArticle = styled.article`
   margin: 0 auto;
   background-color: #fff;
   transform: translateY(-7rem);
+  margin-bottom: 2.4rem;
 
   .title {
     font-size: 2.4rem;
@@ -50,6 +72,82 @@ const StyledArticle = styled.article`
     font-size: 1.6rem;
     line-height: 2.5rem;
     margin-bottom: 2.2rem;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 1.4rem 1.6rem;
+    border: 1px solid #d6d9e6;
+    border-radius: 0.8rem;
+    margin-bottom: 1.2rem;
+
+    .icon {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .card-text-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+
+      .card-title {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: #022959;
+      }
+      .card-text {
+        color: #9699aa;
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
+    }
+  }
+
+  .card.active {
+    background-color: #f8f9ff;
+    border: 1px solid #483eff;
+  }
+
+  .toggle-container {
+    background-color: #f8f9ff;
+    display: flex;
+    justify-content: center;
+    padding: 1.4rem 0;
+    align-items: center;
+    border-radius: 0.8rem;
+    gap: 2.4rem;
+    margin-top: 2.4rem;
+
+    .toggle-text {
+      color: #9699aa;
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+
+    .toggle-text.active {
+      color: #022959;
+    }
+
+    .toggle-outer {
+      height: 2rem;
+      width: 3.8rem;
+      border-radius: 9999px;
+      background-color: #022959;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .toggle-inner {
+      background-color: #fff;
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 50%;
+      position: absolute;
+      left: 0.4rem;
+    }
   }
 `;
 
