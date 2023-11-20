@@ -106,6 +106,13 @@ const StyledArticle = styled.article`
     }
   }
 
+  .card:not(:last-child) {
+    margin-bottom: 1.2rem;
+  }
+  .card:last-child {
+    margin-bottom: 2.4rem;
+  }
+
   .card.active {
     background-color: #f8f9ff;
     border: 1px solid #483eff;
@@ -119,7 +126,6 @@ const StyledArticle = styled.article`
     align-items: center;
     border-radius: 0.8rem;
     gap: 2.4rem;
-    margin-top: 2.4rem;
 
     .toggle-text {
       color: #9699aa;
