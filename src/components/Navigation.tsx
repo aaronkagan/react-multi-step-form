@@ -10,29 +10,33 @@ const Navigation = ({ step, setStep }) => {
   };
 
   return (
-    <StyledNav>
-      <div className="container">
-        {step !== 1 && step !== 5 ? (
-          <button
-            className="previous"
-            onClick={handlePreviousStep}
-          >
-            Go Back
-          </button>
-        ) : (
-          // Empty div for consistent positioning
-          <div></div>
-        )}
-        {step !== 5 && (
-          <button
-            className="next"
-            onClick={handleNextStep}
-          >
-            Next Step
-          </button>
-        )}
-      </div>
-    </StyledNav>
+    <>
+      {step !== 5 && (
+        <StyledNav>
+          <div className="container">
+            {step !== 1 && step !== 5 ? (
+              <button
+                className="previous"
+                onClick={handlePreviousStep}
+              >
+                Go Back
+              </button>
+            ) : (
+              // Empty div for consistent positioning
+              <div></div>
+            )}
+            {step !== 5 && (
+              <button
+                className="next"
+                onClick={handleNextStep}
+              >
+                Next Step
+              </button>
+            )}
+          </div>
+        </StyledNav>
+      )}
+    </>
   );
 };
 
