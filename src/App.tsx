@@ -12,7 +12,7 @@ function App() {
 
   return (
     <main>
-      <StepsBar />
+      <StepsBar step={step} />
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
       {step === 3 && <Step3 />}
