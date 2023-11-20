@@ -6,27 +6,27 @@ const Step4 = () => {
       <p className="text">
         Double-check everything looks OK before confirming.
       </p>
-      <div>
-        <div>
-          <div>
-            <span>Arcade (Monthly)</span>
-            <button>Change</button>
+      <div className="card">
+        <div className="card-top-container">
+          <div className="card-text-container">
+            <span className="card-top-title">Arcade (Monthly)</span>
+            <button className="change">Change</button>
           </div>
-          <span>$9/mo</span>
+          <span className="card-top-price">$9/mo</span>
         </div>
         <hr />
-        <div>
-          <span>Online service</span>
-          <span>+$1/mo</span>
+        <div className="card-bottom-container">
+          <span className="card-bottom-text">Online service</span>
+          <span className="card-bottom-price">+$1/mo</span>
         </div>
-        <div>
-          <span>Larger storage</span>
-          <span>+$2/mo</span>
+        <div className="card-bottom-container">
+          <span className="card-bottom-text">Larger storage</span>
+          <span className="card-bottom-price">+$2/mo</span>
         </div>
       </div>
-      <div>
-        <span>Total (per month)</span>
-        <span>+$12/mo</span>
+      <div className="total-container">
+        <span className="total-text">Total (per month)</span>
+        <span className="total-price">+$12/mo</span>
       </div>
     </StyledArticle>
   );
@@ -53,6 +53,90 @@ const StyledArticle = styled.article`
     font-size: 1.6rem;
     line-height: 2.5rem;
     margin-bottom: 2.2rem;
+  }
+
+  .card {
+    background-color: #f8f9ff;
+    border-radius: 0.8rem;
+    padding: 1.6rem;
+    margin-bottom: 2.4rem;
+
+    .card-top-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+
+      .card-text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+
+        .card-top-title {
+          color: #022959;
+          font-size: 1.4rem;
+          font-size: 500;
+        }
+
+        .change {
+          background: none;
+          border: none;
+          text-decoration: underline;
+          color: #9699aa;
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+      }
+
+      .card-top-price {
+        color: #022959;
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 2rem;
+      }
+    }
+
+    .card-bottom-container {
+      margin-top: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .card-bottom-text {
+        color: #9699aa;
+        line-height: 2rem;
+        font-size: 1.4rem;
+      }
+
+      .card-bottom-price {
+        color: #022959;
+        line-height: 2rem;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .total-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 26.3rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    .total-text {
+      color: #9699aa;
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
+
+    .total-price {
+      color: #483eff;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 2rem;
+    }
   }
 `;
 export default Step4;
