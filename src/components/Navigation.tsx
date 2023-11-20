@@ -25,13 +25,21 @@ const Navigation = ({ step, setStep }) => {
               // Empty div for consistent positioning
               <div></div>
             )}
-
-            <button
-              className="next"
-              onClick={handleNextStep}
-            >
-              Next Step
-            </button>
+            {step === 4 ? (
+              <button
+                className="next confirm"
+                onClick={handleNextStep}
+              >
+                Confirm
+              </button>
+            ) : (
+              <button
+                className="next"
+                onClick={handleNextStep}
+              >
+                Next Step
+              </button>
+            )}
           </div>
         </StyledNav>
       )}
@@ -71,9 +79,14 @@ const StyledNav = styled.nav`
     background-color: #022959;
     border: none;
     color: #fff;
-    padding: 1.2rem 1.6rem;
     border-radius: 0.4rem;
     cursor: pointer;
+    width: 9.7rem;
+    height: 4rem;
+  }
+
+  .next.confirm {
+    background-color: #483eff;
   }
 `;
 
