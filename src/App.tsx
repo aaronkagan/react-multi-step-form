@@ -6,23 +6,27 @@ import Step3 from './components/Step3';
 import Step4 from './components/Step4';
 import Step5 from './components/Step5';
 import StepsBar from './components/StepsBar';
+import GlobalStyle from './components/GlobalStyle';
 
 function App() {
   const [step, setStep] = useState(1);
 
   return (
-    <main>
-      <StepsBar step={step} />
-      {step === 1 && <Step1 />}
-      {step === 2 && <Step2 />}
-      {step === 3 && <Step3 />}
-      {step === 4 && <Step4 />}
-      {step === 5 && <Step5 />}
-      <Navigation
-        step={step}
-        setStep={setStep}
-      />
-    </main>
+    <>
+      <GlobalStyle />
+      <main>
+        <StepsBar step={step} />
+        {step === 1 && <Step1 />}
+        {step === 2 && <Step2 />}
+        {step === 3 && <Step3 />}
+        {step === 4 && <Step4 />}
+        {step === 5 && <Step5 />}
+        <Navigation
+          step={step}
+          setStep={setStep}
+        />
+      </main>
+    </>
   );
 }
 
