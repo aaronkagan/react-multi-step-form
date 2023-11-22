@@ -23,7 +23,12 @@ function App() {
       <GlobalStyle />
       <main>
         <StepsBar step={step} />
-        {step === 1 && <Step1 />}
+        {step === 1 && (
+          <Step1
+            data={data}
+            setData={setData}
+          />
+        )}
         {step === 2 && <Step2 data={data} />}
         {step === 3 && <Step3 />}
         {step === 4 && <Step4 />}

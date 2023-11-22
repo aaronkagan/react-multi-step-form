@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Step1 = () => {
+const Step1 = ({ data, setData }) => {
   return (
     <StyledArticle>
       <h1 className="title">Personal Info</h1>
@@ -14,6 +14,10 @@ const Step1 = () => {
           name="name"
           id="name"
           placeholder="e.g. Stephen King"
+          value={data.name}
+          onChange={(e) =>
+            setData((data) => ({ ...data, name: e.target.value }))
+          }
         />
         <label htmlFor="email">Email Address</label>
         <input
@@ -21,6 +25,10 @@ const Step1 = () => {
           name="email"
           id="email"
           placeholder="e.g. stephenking@lorem.com"
+          value={data.email}
+          onChange={(e) =>
+            setData((data) => ({ ...data, email: e.target.value }))
+          }
         />
         <label htmlFor="tel">Phone Number</label>
         <input
@@ -28,6 +36,13 @@ const Step1 = () => {
           name="tel"
           id="tel"
           placeholder="e.g. +1 234 567 890"
+          value={data.tel}
+          onChange={(e) =>
+            setData((data) => ({
+              ...data,
+              tel: e.target.value
+            }))
+          }
         />
       </form>
     </StyledArticle>
