@@ -10,6 +10,9 @@ import GlobalStyle from './components/GlobalStyle';
 
 function App() {
   const [step, setStep] = useState(1);
+  const [plan, setPlan] = useState('');
+  const [planCost, setPlanCost] = useState(0);
+  const [payPeriod, setPayPeriod] = useState('monthly');
 
   return (
     <>
@@ -17,7 +20,16 @@ function App() {
       <main>
         <StepsBar step={step} />
         {step === 1 && <Step1 />}
-        {step === 2 && <Step2 />}
+        {step === 2 && (
+          <Step2
+            plan={plan}
+            setPlan={setPlan}
+            planCost={planCost}
+            setPlanCost={setPlanCost}
+            payPeriod={payPeriod}
+            setPayPeriod={setPayPeriod}
+          />
+        )}
         {step === 3 && <Step3 />}
         {step === 4 && <Step4 />}
         {step === 5 && <Step5 />}

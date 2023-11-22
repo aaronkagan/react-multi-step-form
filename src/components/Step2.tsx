@@ -1,12 +1,25 @@
 import styled from 'styled-components';
 
-const Step2 = () => {
+const Step2 = ({
+  plan,
+  setPlan,
+  planCost,
+  setPlanCost,
+  payPeriod,
+  setPayPeriod
+}) => {
   return (
     <StyledArticle>
       <h1 className="title">Select Your Plan</h1>
       <p className="text">You have the option of monthly or yearly billing.</p>
       <div>
-        <article className="card active">
+        <article
+          className={plan === 'arcade' ? 'card active' : 'card'}
+          onClick={() => {
+            setPlan('arcade');
+            setPlanCost(payPeriod === 'monthly' ? 9 : null);
+          }}
+        >
           <img
             className="icon"
             src="public/assets/images/icon-arcade.svg"
@@ -17,7 +30,13 @@ const Step2 = () => {
             <span className="card-text">$9/mo</span>
           </div>
         </article>
-        <article className="card">
+        <article
+          className={plan === 'advanced' ? 'card active' : 'card'}
+          onClick={() => {
+            setPlan('advanced');
+            setPlanCost(payPeriod === 'monthly' ? 12 : null);
+          }}
+        >
           <img
             className="icon"
             src="public/assets/images/icon-advanced.svg"
@@ -28,7 +47,13 @@ const Step2 = () => {
             <span className="card-text">$12/mo</span>
           </div>
         </article>
-        <article className="card">
+        <article
+          className={plan === 'pro' ? 'card active' : 'card'}
+          onClick={() => {
+            setPlan('pro');
+            setPlanCost(payPeriod === 'monthly' ? 15 : null);
+          }}
+        >
           <img
             className="icon"
             src="public/assets/images/icon-pro.svg"
