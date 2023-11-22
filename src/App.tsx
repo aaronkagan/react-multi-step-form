@@ -55,7 +55,12 @@ function App() {
             setData={setData}
           />
         )}
-        {step === 3 && <Step3 />}
+        {step === 3 && (
+          <Step3
+            data={data}
+            setData={setData}
+          />
+        )}
         {step === 4 && <Step4 />}
         {step === 5 && <Step5 />}
         <Navigation

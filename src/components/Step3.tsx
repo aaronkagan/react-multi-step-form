@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-const Step3 = () => {
+const Step3 = ({ data, setData }) => {
   return (
     <StyledArticle>
       <h1 className="title">Pick add-ons</h1>
