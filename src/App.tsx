@@ -15,7 +15,7 @@ function App() {
     email: '',
     tel: '',
     plan: '',
-    period: 'monthly',
+    period: 'yearly',
     addOns: {
       onlineServices: {
         description: 'Online Services',
@@ -61,7 +61,7 @@ function App() {
             setData={setData}
           />
         )}
-        {step === 4 && <Step4 />}
+        {step === 4 && <Step4 data={data} />}
         {step === 5 && <Step5 />}
         <Navigation
           step={step}

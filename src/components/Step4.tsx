@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-const Step4 = () => {
+const Step4 = ({ data }) => {
+  const addedAddOns = Object.values(data.addOns).filter((elem) => elem.isAdded);
+  console.log(addedAddOns);
+
   return (
     <StyledArticle>
       <h1 className="title">Finishing up</h1>
@@ -15,20 +18,41 @@ const Step4 = () => {
           <span className="card-top-price">$9/mo</span>
         </div>
         <hr />
-        <div className="card-bottom-container">
+        {addedAddOns.map((addOn) => {
+          return (
+            <AddOn
+              addOn={addOn}
+              data={data}
+            />
+          );
+        })}
+        {/* <div className="card-bottom-container">
           <span className="card-bottom-text">Online service</span>
           <span className="card-bottom-price">+$1/mo</span>
         </div>
         <div className="card-bottom-container">
           <span className="card-bottom-text">Larger storage</span>
           <span className="card-bottom-price">+$2/mo</span>
-        </div>
+        </div> */}
       </div>
       <div className="total-container">
         <span className="total-text">Total (per month)</span>
         <span className="total-price">+$12/mo</span>
       </div>
     </StyledArticle>
+  );
+};
+
+const AddOn = ({ addOn, data }) => {
+  return (
+    <div className="card-bottom-container">
+      <span className="card-bottom-text">{addOn.description}</span>
+      <span className="card-bottom-price">
+        {data.period === 'monthly'
+          ? `+${addOn.monthlyPrice}/mo`
+          : `+${addOn.yearlyPrice}/yr`}
+      </span>
+    </div>
   );
 };
 
