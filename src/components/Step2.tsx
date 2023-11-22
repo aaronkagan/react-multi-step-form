@@ -27,7 +27,9 @@ const Step2 = ({
           />
           <div className="card-text-container">
             <h3 className="card-title">Arcade</h3>
-            <span className="card-text">$9/mo</span>
+            <span className="card-text">
+              ${payPeriod === 'monthly' ? '9/mo' : null}
+            </span>
           </div>
         </article>
         <article
@@ -44,7 +46,9 @@ const Step2 = ({
           />
           <div className="card-text-container">
             <h3 className="card-title">Advanced</h3>
-            <span className="card-text">$12/mo</span>
+            <span className="card-text">
+              ${payPeriod === 'monthly' ? '12/mo' : null}
+            </span>
           </div>
         </article>
         <article
@@ -61,7 +65,9 @@ const Step2 = ({
           />
           <div className="card-text-container">
             <h3 className="card-title">Pro</h3>
-            <span className="card-text">$15/mo</span>
+            <span className="card-text">
+              ${payPeriod === 'monthly' ? '15/mo' : null}
+            </span>
           </div>
         </article>
       </div>
