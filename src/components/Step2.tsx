@@ -1,17 +1,12 @@
 import styled from 'styled-components';
 
-const Step2 = ({ plan, setPlan, payPeriod, setPayPeriod }) => {
+const Step2 = ({ data }) => {
   return (
     <StyledArticle>
       <h1 className="title">Select Your Plan</h1>
       <p className="text">You have the option of monthly or yearly billing.</p>
       <div>
-        <article
-          className={plan === 'arcade' ? 'card active' : 'card'}
-          onClick={() => {
-            setPlan('arcade');
-          }}
-        >
+        <article className={data.plan === 'arcade' ? 'card active' : 'card'}>
           <img
             className="icon"
             src="public/assets/images/icon-arcade.svg"
@@ -20,16 +15,11 @@ const Step2 = ({ plan, setPlan, payPeriod, setPayPeriod }) => {
           <div className="card-text-container">
             <h3 className="card-title">Arcade</h3>
             <span className="card-text">
-              ${payPeriod === 'monthly' ? '9/mo' : '90/yr'}
+              ${data.period === 'monthly' ? '9/mo' : '90/yr'}
             </span>
           </div>
         </article>
-        <article
-          className={plan === 'advanced' ? 'card active' : 'card'}
-          onClick={() => {
-            setPlan('advanced');
-          }}
-        >
+        <article className={data.plan === 'advanced' ? 'card active' : 'card'}>
           <img
             className="icon"
             src="public/assets/images/icon-advanced.svg"
@@ -38,16 +28,11 @@ const Step2 = ({ plan, setPlan, payPeriod, setPayPeriod }) => {
           <div className="card-text-container">
             <h3 className="card-title">Advanced</h3>
             <span className="card-text">
-              ${payPeriod === 'monthly' ? '12/mo' : '120/yr'}
+              ${data.period === 'monthly' ? '12/mo' : '120/yr'}
             </span>
           </div>
         </article>
-        <article
-          className={plan === 'pro' ? 'card active' : 'card'}
-          onClick={() => {
-            setPlan('pro');
-          }}
-        >
+        <article className={data.plan === 'pro' ? 'card active' : 'card'}>
           <img
             className="icon"
             src="public/assets/images/icon-pro.svg"
@@ -56,7 +41,7 @@ const Step2 = ({ plan, setPlan, payPeriod, setPayPeriod }) => {
           <div className="card-text-container">
             <h3 className="card-title">Pro</h3>
             <span className="card-text">
-              ${payPeriod === 'monthly' ? '15/mo' : '150/yr'}
+              ${data.period === 'monthly' ? '15/mo' : '150/yr'}
             </span>
           </div>
         </article>
@@ -64,20 +49,15 @@ const Step2 = ({ plan, setPlan, payPeriod, setPayPeriod }) => {
       <div className="toggle-container">
         <span
           className={
-            payPeriod === 'monthly' ? 'toggle-text active' : 'toggle-text'
+            data.period === 'monthly' ? 'toggle-text active' : 'toggle-text'
           }
         >
           Monthly
         </span>
-        <div
-          // onClick={() => {
-          //   setPayPeriod(payPeriod === 'monthly' ? 'yearly' : 'monthly');
-          // }}
-          className="toggle-outer"
-        >
+        <div className="toggle-outer">
           <div
             className={
-              payPeriod === 'yearly'
+              data.period === 'yearly'
                 ? 'toggle-inner toggle-yearly'
                 : 'toggle-inner'
             }
@@ -85,7 +65,7 @@ const Step2 = ({ plan, setPlan, payPeriod, setPayPeriod }) => {
         </div>
         <span
           className={
-            payPeriod === 'yearly' ? 'toggle-text active' : 'toggle-text'
+            data.period === 'yearly' ? 'toggle-text active' : 'toggle-text'
           }
         >
           Yearly
