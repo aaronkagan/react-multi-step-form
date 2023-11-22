@@ -17,7 +17,7 @@ const Step2 = ({
           className={plan === 'arcade' ? 'card active' : 'card'}
           onClick={() => {
             setPlan('arcade');
-            setPlanCost(payPeriod === 'monthly' ? 9 : null);
+            setPlanCost(payPeriod === 'monthly' ? 9 : 90);
           }}
         >
           <img
@@ -28,7 +28,7 @@ const Step2 = ({
           <div className="card-text-container">
             <h3 className="card-title">Arcade</h3>
             <span className="card-text">
-              ${payPeriod === 'monthly' ? '9/mo' : null}
+              ${payPeriod === 'monthly' ? '9/mo' : '90/yr'}
             </span>
           </div>
         </article>
@@ -36,7 +36,7 @@ const Step2 = ({
           className={plan === 'advanced' ? 'card active' : 'card'}
           onClick={() => {
             setPlan('advanced');
-            setPlanCost(payPeriod === 'monthly' ? 12 : null);
+            setPlanCost(payPeriod === 'monthly' ? 12 : 120);
           }}
         >
           <img
@@ -47,7 +47,7 @@ const Step2 = ({
           <div className="card-text-container">
             <h3 className="card-title">Advanced</h3>
             <span className="card-text">
-              ${payPeriod === 'monthly' ? '12/mo' : null}
+              ${payPeriod === 'monthly' ? '12/mo' : '120/yr'}
             </span>
           </div>
         </article>
@@ -55,7 +55,7 @@ const Step2 = ({
           className={plan === 'pro' ? 'card active' : 'card'}
           onClick={() => {
             setPlan('pro');
-            setPlanCost(payPeriod === 'monthly' ? 15 : null);
+            setPlanCost(payPeriod === 'monthly' ? 15 : 150);
           }}
         >
           <img
@@ -66,17 +66,40 @@ const Step2 = ({
           <div className="card-text-container">
             <h3 className="card-title">Pro</h3>
             <span className="card-text">
-              ${payPeriod === 'monthly' ? '15/mo' : null}
+              ${payPeriod === 'monthly' ? '15/mo' : '150/yr'}
             </span>
           </div>
         </article>
       </div>
       <div className="toggle-container">
-        <span className="toggle-text active">Monthly</span>
-        <div className="toggle-outer">
-          <div className="toggle-inner"></div>
+        <span
+          className={
+            payPeriod === 'monthly' ? 'toggle-text active' : 'toggle-text'
+          }
+        >
+          Monthly
+        </span>
+        <div
+          // onClick={() => {
+          //   setPayPeriod(payPeriod === 'monthly' ? 'yearly' : 'monthly');
+          // }}
+          className="toggle-outer"
+        >
+          <div
+            className={
+              payPeriod === 'yearly'
+                ? 'toggle-inner toggle-yearly'
+                : 'toggle-inner'
+            }
+          ></div>
         </div>
-        <span className="toggle-text">Yearly</span>
+        <span
+          className={
+            payPeriod === 'yearly' ? 'toggle-text active' : 'toggle-text'
+          }
+        >
+          Yearly
+        </span>
       </div>
     </StyledArticle>
   );
@@ -184,6 +207,11 @@ const StyledArticle = styled.article`
       border-radius: 50%;
       position: absolute;
       left: 0.4rem;
+    }
+
+    .toggle-yearly {
+      right: 0.4rem;
+      left: auto;
     }
   }
 `;
