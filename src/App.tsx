@@ -29,7 +29,12 @@ function App() {
             setData={setData}
           />
         )}
-        {step === 2 && <Step2 data={data} />}
+        {step === 2 && (
+          <Step2
+            data={data}
+            setData={setData}
+          />
+        )}
         {step === 3 && <Step3 />}
         {step === 4 && <Step4 />}
         {step === 5 && <Step5 />}

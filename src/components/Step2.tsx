@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Step2 = ({ data }) => {
+const Step2 = ({ data, setData }) => {
   return (
     <StyledArticle>
       <h1 className="title">Select Your Plan</h1>
