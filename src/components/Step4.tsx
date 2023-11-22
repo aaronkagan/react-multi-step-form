@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import AddOn from './AddOn';
 const Step4 = ({ data }) => {
   const addedAddOns = Object.values(data.addOns).filter((elem) => elem.isAdded);
   console.log(addedAddOns);
@@ -40,19 +41,6 @@ const Step4 = ({ data }) => {
         <span className="total-price">+$12/mo</span>
       </div>
     </StyledArticle>
-  );
-};
-
-const AddOn = ({ addOn, data }) => {
-  return (
-    <div className="card-bottom-container">
-      <span className="card-bottom-text">{addOn.description}</span>
-      <span className="card-bottom-price">
-        {data.period === 'monthly'
-          ? `+${addOn.monthlyPrice}/mo`
-          : `+${addOn.yearlyPrice}/yr`}
-      </span>
-    </div>
   );
 };
 
