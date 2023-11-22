@@ -27,14 +27,6 @@ const Step4 = ({ data }) => {
             />
           );
         })}
-        {/* <div className="card-bottom-container">
-          <span className="card-bottom-text">Online service</span>
-          <span className="card-bottom-price">+$1/mo</span>
-        </div>
-        <div className="card-bottom-container">
-          <span className="card-bottom-text">Larger storage</span>
-          <span className="card-bottom-price">+$2/mo</span>
-        </div> */}
       </div>
       <div className="total-container">
         <span className="total-text">Total (per month)</span>
