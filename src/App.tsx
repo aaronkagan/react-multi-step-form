@@ -11,7 +11,6 @@ import GlobalStyle from './components/GlobalStyle';
 function App() {
   const [step, setStep] = useState(1);
   const [plan, setPlan] = useState('');
-  const [planCost, setPlanCost] = useState(0);
   const [payPeriod, setPayPeriod] = useState('monthly');
 
   return (
@@ -24,8 +23,6 @@ function App() {
           <Step2
             plan={plan}
             setPlan={setPlan}
-            planCost={planCost}
-            setPlanCost={setPlanCost}
             payPeriod={payPeriod}
             setPayPeriod={setPayPeriod}
           />

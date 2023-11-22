@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 
-const Step2 = ({
-  plan,
-  setPlan,
-  planCost,
-  setPlanCost,
-  payPeriod,
-  setPayPeriod
-}) => {
+const Step2 = ({ plan, setPlan, payPeriod, setPayPeriod }) => {
   return (
     <StyledArticle>
       <h1 className="title">Select Your Plan</h1>
@@ -17,7 +10,6 @@ const Step2 = ({
           className={plan === 'arcade' ? 'card active' : 'card'}
           onClick={() => {
             setPlan('arcade');
-            setPlanCost(payPeriod === 'monthly' ? 9 : 90);
           }}
         >
           <img
@@ -36,7 +28,6 @@ const Step2 = ({
           className={plan === 'advanced' ? 'card active' : 'card'}
           onClick={() => {
             setPlan('advanced');
-            setPlanCost(payPeriod === 'monthly' ? 12 : 120);
           }}
         >
           <img
@@ -55,7 +46,6 @@ const Step2 = ({
           className={plan === 'pro' ? 'card active' : 'card'}
           onClick={() => {
             setPlan('pro');
-            setPlanCost(payPeriod === 'monthly' ? 15 : 150);
           }}
         >
           <img
