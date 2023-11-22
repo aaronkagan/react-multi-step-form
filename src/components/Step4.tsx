@@ -1,8 +1,20 @@
 import styled from 'styled-components';
 import AddOn from './AddOn';
 const Step4 = ({ data }) => {
+  const period = data.period;
   const addedAddOns = Object.values(data.addOns).filter((elem) => elem.isAdded);
-  console.log(addedAddOns);
+  let totalAddOnsCost = 0;
+
+  Object.values(addedAddOns).forEach((addOn) => {
+    period === 'monthly'
+      ? (totalAddOnsCost += addOn.monthlyPrice)
+      : (totalAddOnsCost += addOn.yearlyPrice);
+  });
+
+  const total =
+    period === 'monthly'
+      ? data.planMonthlyCost + totalAddOnsCost
+      : data.planMonthlyCost * data.yearlyMultiplier + totalAddOnsCost;
 
   return (
     <StyledArticle>
@@ -13,15 +25,22 @@ const Step4 = ({ data }) => {
       <div className="card">
         <div className="card-top-container">
           <div className="card-text-container">
-            <span className="card-top-title">Arcade (Monthly)</span>
+            <span className="card-top-title">
+              {data.plan} ({period === 'monthly' ? 'Monthly' : 'Yealry'})
+            </span>
             <button className="change">Change</button>
           </div>
-          <span className="card-top-price">$9/mo</span>
+          <span className="card-top-price">
+            {period === 'monthly'
+              ? `$${data.planMonthlyCost}/mo`
+              : `$${data.planMonthlyCost * data.yearlyMultiplier}/yr`}
+          </span>
         </div>
         <hr />
         {addedAddOns.map((addOn) => {
           return (
             <AddOn
+              key={addOn.description}
               addOn={addOn}
               data={data}
             />
@@ -29,8 +48,13 @@ const Step4 = ({ data }) => {
         })}
       </div>
       <div className="total-container">
-        <span className="total-text">Total (per month)</span>
-        <span className="total-price">+$12/mo</span>
+        <span className="total-text">
+          Total {period === 'monthly' ? '(per month)' : '(per year)'}
+        </span>
+        <span className="total-price">
+          {period === 'monthly' ? `$${total}/mo` : `$${total}/yr`}
+        </span>
+        {/* <span className="total-price">+$12/mo</span> */}
       </div>
     </StyledArticle>
   );

@@ -14,7 +14,9 @@ function App() {
     name: '',
     email: '',
     tel: '',
-    plan: '',
+    plan: 'Arcade',
+    planMonthlyCost: 9,
+    yearlyMultiplier: 10,
     period: 'yearly',
     addOns: {
       onlineServices: {
