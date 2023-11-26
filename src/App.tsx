@@ -14,10 +14,10 @@ function App() {
     name: '',
     email: '',
     tel: '',
-    plan: 'Arcade',
-    planMonthlyCost: 9,
-    yearlyMultiplier: 10,
-    period: 'yearly',
+    plan: '',
+    planMonthlyCost: 0,
+    yearlyMultiplier: 0,
+    period: 'monthly',
     addOns: {
       onlineServices: {
         description: 'Online Services',

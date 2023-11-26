@@ -1,6 +1,15 @@
 import styled from 'styled-components';
 
 const Step2 = ({ data, setData }) => {
+  function handleSelectPlan() {}
+
+  function handleSelectPeriod() {
+    setData((prevData) => ({
+      ...prevData,
+      period: `${data.period === 'monthly' ? 'yearly' : 'monthly'}`
+    }));
+  }
+
   return (
     <StyledArticle>
       <h1 className="title">Select Your Plan</h1>
@@ -54,7 +63,10 @@ const Step2 = ({ data, setData }) => {
         >
           Monthly
         </span>
-        <div className="toggle-outer">
+        <div
+          className="toggle-outer"
+          onClick={handleSelectPeriod}
+        >
           <div
             className={
               data.period === 'yearly'
