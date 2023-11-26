@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-const Step4 = ({ data }) => {
+const Step4 = ({ data, setStep }) => {
   const period = data.period;
   const addedAddOns = Object.values(data.addOns).filter((elem) => elem.isAdded);
   let totalAddOnsCost = 0;
@@ -28,7 +28,12 @@ const Step4 = ({ data }) => {
               {data.plan.slice(0, 1).toUpperCase() + data.plan.slice(1)} (
               {period === 'monthly' ? 'Monthly' : 'Yearly'})
             </span>
-            <button className="change">Change</button>
+            <button
+              className="change"
+              onClick={() => setStep(2)}
+            >
+              Change
+            </button>
           </div>
           <span className="card-top-price">
             {period === 'monthly'
