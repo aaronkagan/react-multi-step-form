@@ -26,7 +26,8 @@ const Step4 = ({ data }) => {
         <div className="card-top-container">
           <div className="card-text-container">
             <span className="card-top-title">
-              {data.plan} ({period === 'monthly' ? 'Monthly' : 'Yealry'})
+              {data.plan.slice(0, 1).toUpperCase() + data.plan.slice(1)} (
+              {period === 'monthly' ? 'Monthly' : 'Yearly'})
             </span>
             <button className="change">Change</button>
           </div>
