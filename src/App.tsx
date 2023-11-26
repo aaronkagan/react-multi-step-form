@@ -16,7 +16,7 @@ function App() {
     tel: '',
     plan: '',
     planMonthlyCost: 0,
-    yearlyMultiplier: 0,
+    yearlyMultiplier: 10,
     period: 'monthly',
     addOns: {
       onlineServices: {

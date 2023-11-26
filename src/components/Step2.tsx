@@ -1,7 +1,20 @@
 import styled from 'styled-components';
 
+const monthlyPrices = {
+  arcade: 9,
+  advanced: 12,
+  pro: 15
+};
+
 const Step2 = ({ data, setData }) => {
-  function handleSelectPlan() {}
+  function handleSelectPlan(e) {
+    const { id } = e.target.closest('.card');
+    setData((prevData) => ({
+      ...prevData,
+      plan: id,
+      planMonthlyCost: monthlyPrices[id]
+    }));
+  }
 
   function handleSelectPeriod() {
     setData((prevData) => ({
@@ -15,7 +28,11 @@ const Step2 = ({ data, setData }) => {
       <h1 className="title">Select Your Plan</h1>
       <p className="text">You have the option of monthly or yearly billing.</p>
       <div>
-        <article className={data.plan === 'arcade' ? 'card active' : 'card'}>
+        <article
+          className={data.plan === 'arcade' ? 'card active' : 'card'}
+          onClick={handleSelectPlan}
+          id="arcade"
+        >
           <img
             className="icon"
             src="public/assets/images/icon-arcade.svg"
@@ -28,7 +45,11 @@ const Step2 = ({ data, setData }) => {
             </span>
           </div>
         </article>
-        <article className={data.plan === 'advanced' ? 'card active' : 'card'}>
+        <article
+          className={data.plan === 'advanced' ? 'card active' : 'card'}
+          onClick={handleSelectPlan}
+          id="advanced"
+        >
           <img
             className="icon"
             src="public/assets/images/icon-advanced.svg"
@@ -41,7 +62,11 @@ const Step2 = ({ data, setData }) => {
             </span>
           </div>
         </article>
-        <article className={data.plan === 'pro' ? 'card active' : 'card'}>
+        <article
+          className={data.plan === 'pro' ? 'card active' : 'card'}
+          onClick={handleSelectPlan}
+          id="pro"
+        >
           <img
             className="icon"
             src="public/assets/images/icon-pro.svg"
