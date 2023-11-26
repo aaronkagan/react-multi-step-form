@@ -22,19 +22,16 @@ function App() {
       onlineServices: {
         description: 'Online Services',
         monthlyPrice: 1,
-        yearlyPrice: 10,
         isAdded: false
       },
       largerStorage: {
         description: 'Larger Storage',
         monthlyPrice: 2,
-        yearlyPrice: 20,
         isAdded: false
       },
       customizableProfile: {
         description: 'Customizable Profile',
-        monthlyPrice: 1,
-        yearlyPrice: 20,
+        monthlyPrice: 2,
         isAdded: false
       }
     }

@@ -33,7 +33,15 @@ const Step3 = ({ data, setData }) => {
             <h3 className="card-title">Online Services</h3>
             <p className="card-text">Access to multiplayer games</p>
           </div>
-          <span className="card-price">+$1/mo</span>
+          <span className="card-price">
+            +$
+            {data.period === 'monthly'
+              ? `${data.addOns.onlineServices.monthlyPrice}/mo`
+              : `${
+                  data.addOns.onlineServices.monthlyPrice *
+                  data.yearlyMultiplier
+                }/yr`}
+          </span>
         </article>
         <article className={largerStorage.isAdded ? 'card active' : 'card'}>
           <input
@@ -45,7 +53,14 @@ const Step3 = ({ data, setData }) => {
             <h3 className="card-title">Larger storage</h3>
             <p className="card-text">Extra 1TB of cloud save</p>
           </div>
-          <span className="card-price">+$2/mo</span>
+          <span className="card-price">
+            +$
+            {data.period === 'monthly'
+              ? `${data.addOns.largerStorage.monthlyPrice}/mo`
+              : `${
+                  data.addOns.largerStorage.monthlyPrice * data.yearlyMultiplier
+                }/yr`}
+          </span>
         </article>
         <article
           className={customizableProfile.isAdded ? 'card active' : 'card'}
@@ -59,7 +74,15 @@ const Step3 = ({ data, setData }) => {
             <h3 className="card-title">Customizable profile</h3>
             <p className="card-text">Custom theme on your profile</p>
           </div>
-          <span className="card-price">+$2/mo</span>
+          <span className="card-price">
+            +$
+            {data.period === 'monthly'
+              ? `${data.addOns.customizableProfile.monthlyPrice}/mo`
+              : `${
+                  data.addOns.customizableProfile.monthlyPrice *
+                  data.yearlyMultiplier
+                }/yr`}
+          </span>
         </article>
       </div>
     </StyledArticle>
