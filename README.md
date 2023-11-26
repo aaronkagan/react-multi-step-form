@@ -56,10 +56,11 @@ Users should be able to:
 }
 ```
 
+Getting id of the closest parent with the a specific classname
+(or any other selector)
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉');
-};
+const { id } = e.target.closest('.classname');
 ```
 
 ### Useful resources
