@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import AddOn from './AddOn';
 const Step4 = ({ data }) => {
   const period = data.period;
   const addedAddOns = Object.values(data.addOns).filter((elem) => elem.isAdded);
