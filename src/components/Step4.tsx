@@ -7,7 +7,7 @@ const Step4 = ({ data }) => {
   Object.values(addedAddOns).forEach((addOn) => {
     period === 'monthly'
       ? (totalAddOnsCost += addOn.monthlyPrice)
-      : (totalAddOnsCost += addOn.yearlyPrice);
+      : (totalAddOnsCost += addOn.monthlyPrice * data.yearlyMultiplier);
   });
 
   const total =
@@ -67,7 +67,7 @@ const AddOn = ({ addOn, data }) => {
       <span className="card-bottom-price">
         {data.period === 'monthly'
           ? `+${addOn.monthlyPrice}/mo`
-          : `+${addOn.yearlyPrice}/yr`}
+          : `+${addOn.monthlyPrice * data.yearlyMultiplier}/yr`}
       </span>
     </div>
   );
