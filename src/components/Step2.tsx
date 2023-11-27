@@ -43,6 +43,9 @@ const Step2 = ({ data, setData }) => {
             <span className="card-text">
               ${data.period === 'monthly' ? '9/mo' : '90/yr'}
             </span>
+            {data.period === 'yearly' && (
+              <span className="free-months">2 months free</span>
+            )}
           </div>
         </article>
         <article
@@ -60,6 +63,9 @@ const Step2 = ({ data, setData }) => {
             <span className="card-text">
               ${data.period === 'monthly' ? '12/mo' : '120/yr'}
             </span>
+            {data.period === 'yearly' && (
+              <span className="free-months">2 months free</span>
+            )}
           </div>
         </article>
         <article
@@ -77,6 +83,9 @@ const Step2 = ({ data, setData }) => {
             <span className="card-text">
               ${data.period === 'monthly' ? '15/mo' : '150/yr'}
             </span>
+            {data.period === 'yearly' && (
+              <span className="free-months">2 months free</span>
+            )}
           </div>
         </article>
       </div>
@@ -137,7 +146,7 @@ const StyledArticle = styled.article`
 
   .card {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.4rem;
     padding: 1.4rem 1.6rem;
     border: 1px solid #d6d9e6;
@@ -150,19 +159,26 @@ const StyledArticle = styled.article`
     }
 
     .card-text-container {
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-
       .card-title {
         font-size: 1.6rem;
         font-weight: 500;
         color: #022959;
+        margin-bottom: 0.5rem;
       }
       .card-text {
         color: #9699aa;
         font-size: 1.4rem;
         line-height: 2rem;
+        display: block;
+        margin-bottom: 0.3rem;
+      }
+
+      .free-months {
+        color: #022959;
+        line-height: 2rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+        display: block;
       }
     }
   }
