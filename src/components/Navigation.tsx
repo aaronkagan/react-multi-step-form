@@ -88,6 +88,10 @@ const StyledNav = styled.nav`
   .next.confirm {
     background-color: #483eff;
   }
+
+  .next.confirm:hover {
+    background-color: #928cff;
+  }
 `;
 
 export default Navigation;
