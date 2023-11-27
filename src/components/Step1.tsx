@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Step1 = ({ data, setData }) => {
+const Step1 = ({ data, setData, isStepOneSubmitted }) => {
   return (
     <StyledArticle>
       <h1 className="title">Personal Info</h1>
@@ -8,7 +8,13 @@ const Step1 = ({ data, setData }) => {
         Please provide your name, email address, and phone number.
       </p>
       <form>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">
+          Name{' '}
+          {isStepOneSubmitted && !data.name && (
+            <span className="error">This field is required</span>
+          )}
+        </label>
+
         <input
           type="text"
           name="name"
@@ -18,8 +24,19 @@ const Step1 = ({ data, setData }) => {
           onChange={(e) =>
             setData((data) => ({ ...data, name: e.target.value }))
           }
+          style={
+            isStepOneSubmitted && !data.name
+              ? { outline: '1px solid #EE374A' }
+              : {}
+          }
         />
-        <label htmlFor="email">Email Address</label>
+        <label htmlFor="email">
+          Email Address{' '}
+          {isStepOneSubmitted && !data.email && (
+            <span className="error">This field is required</span>
+          )}
+        </label>
+
         <input
           type="email"
           name="email"
@@ -29,8 +46,19 @@ const Step1 = ({ data, setData }) => {
           onChange={(e) =>
             setData((data) => ({ ...data, email: e.target.value }))
           }
+          style={
+            isStepOneSubmitted && !data.email
+              ? { outline: '1px solid #EE374A' }
+              : {}
+          }
         />
-        <label htmlFor="tel">Phone Number</label>
+        <label htmlFor="tel">
+          Phone Number{' '}
+          {isStepOneSubmitted && !data.tel && (
+            <span className="error">This field is required</span>
+          )}
+        </label>
+
         <input
           type="tel"
           name="tel"
@@ -42,6 +70,11 @@ const Step1 = ({ data, setData }) => {
               ...data,
               tel: e.target.value
             }))
+          }
+          style={
+            isStepOneSubmitted && !data.tel
+              ? { outline: '1px solid #EE374A' }
+              : {}
           }
         />
       </form>
@@ -73,10 +106,17 @@ const StyledArticle = styled.article`
   }
 
   label {
-    display: block;
+    display: flex;
+    justify-content: space-between;
     color: #022959;
     font: 1.2rem;
     margin-bottom: 0.3rem;
+  }
+
+  .error {
+    color: #ee374a;
+    font-weight: 700;
+    font-size: 1.2rem;
   }
 
   input {

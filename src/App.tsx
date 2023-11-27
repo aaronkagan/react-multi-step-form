@@ -37,6 +37,12 @@ function App() {
     }
   });
 
+  const [isStepOneSubmitted, setIsStepOneSubmitted] = useState(false);
+
+  function handleStepOneInputError() {
+    setIsStepOneSubmitted(true);
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -46,6 +52,7 @@ function App() {
           <Step1
             data={data}
             setData={setData}
+            isStepOneSubmitted={isStepOneSubmitted}
           />
         )}
         {step === 2 && (
@@ -71,6 +78,7 @@ function App() {
           step={step}
           setStep={setStep}
           data={data}
+          handleStepOneInputError={handleStepOneInputError}
         />
       </main>
     </>

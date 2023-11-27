@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
-const Navigation = ({ step, setStep, data }) => {
+const Navigation = ({ step, setStep, data, handleStepOneInputError }) => {
   const handlePreviousStep = () => {
     if (step > 1) setStep((s) => s - 1);
   };
 
   const handleNextStep = () => {
+    if (step === 1) handleStepOneInputError();
     if (step === 1 && data.name && data.email && data.tel) setStep(2);
     if (step === 2 && data.plan) setStep(3);
     if (step >= 3 && step <= 4) setStep((s) => s + 1);
