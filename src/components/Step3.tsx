@@ -30,6 +30,8 @@ const Step3 = ({ data, setData }) => {
           <input
             type="checkbox"
             checked={onlineServices.isAdded}
+            // Adding readonly because the handler is on the card and we can't have a checked attribute without an onChange handler unless it's readonly
+            readOnly
           />
           <div className="card-text-container">
             <h3 className="card-title">Online Services</h3>
@@ -52,6 +54,8 @@ const Step3 = ({ data, setData }) => {
           <input
             type="checkbox"
             checked={largerStorage.isAdded}
+            // Adding readonly because the handler is on the card and we can't have a checked attribute without an onChange handler unless it's readonly
+            readOnly
           />
           <div className="card-text-container">
             <h3 className="card-title">Larger storage</h3>
@@ -73,6 +77,8 @@ const Step3 = ({ data, setData }) => {
           <input
             type="checkbox"
             checked={customizableProfile.isAdded}
+            // Adding readonly because the handler is on the card and we can't have a checked attribute without an onChange handler unless it's readonly
+            readOnly
           />
           <div className="card-text-container">
             <h3 className="card-title">Customizable profile</h3>
