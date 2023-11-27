@@ -76,6 +76,7 @@ const StyledNav = styled.nav`
     color: #9699aa;
     background: none;
     border: none;
+    cursor: pointer;
   }
 
   .next {
