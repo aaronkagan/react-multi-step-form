@@ -70,6 +70,7 @@ function App() {
         <Navigation
           step={step}
           setStep={setStep}
+          data={data}
         />
       </main>
     </>

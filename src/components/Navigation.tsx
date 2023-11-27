@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
-const Navigation = ({ step, setStep }) => {
+const Navigation = ({ step, setStep, data }) => {
   const handlePreviousStep = () => {
     if (step > 1) setStep((s) => s - 1);
   };
 
   const handleNextStep = () => {
-    if (step < 5) setStep((s) => s + 1);
+    if (step === 1 && data.name && data.email && data.tel) setStep(2);
+    if (step === 2 && data.plan) setStep(3);
+    if (step >= 3 && step <= 4) setStep((s) => s + 1);
   };
 
   return (
