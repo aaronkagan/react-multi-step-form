@@ -23,11 +23,13 @@ const Step3 = ({ data, setData }) => {
       <p className="text">Add-ons help enhance your gaming experience.</p>
 
       <div>
-        <article className={onlineServices.isAdded ? 'card active' : 'card'}>
+        <article
+          className={onlineServices.isAdded ? 'card active' : 'card'}
+          onClick={() => handleToggleChecked('onlineServices')}
+        >
           <input
             type="checkbox"
             checked={onlineServices.isAdded}
-            onChange={() => handleToggleChecked('onlineServices')}
           />
           <div className="card-text-container">
             <h3 className="card-title">Online Services</h3>
@@ -43,11 +45,13 @@ const Step3 = ({ data, setData }) => {
                 }/yr`}
           </span>
         </article>
-        <article className={largerStorage.isAdded ? 'card active' : 'card'}>
+        <article
+          className={largerStorage.isAdded ? 'card active' : 'card'}
+          onClick={() => handleToggleChecked('largerStorage')}
+        >
           <input
             type="checkbox"
             checked={largerStorage.isAdded}
-            onChange={() => handleToggleChecked('largerStorage')}
           />
           <div className="card-text-container">
             <h3 className="card-title">Larger storage</h3>
@@ -64,11 +68,11 @@ const Step3 = ({ data, setData }) => {
         </article>
         <article
           className={customizableProfile.isAdded ? 'card active' : 'card'}
+          onClick={() => handleToggleChecked('customizableProfile')}
         >
           <input
             type="checkbox"
             checked={customizableProfile.isAdded}
-            onChange={() => handleToggleChecked('customizableProfile')}
           />
           <div className="card-text-container">
             <h3 className="card-title">Customizable profile</h3>
@@ -98,6 +102,7 @@ const StyledArticle = styled.article`
   background-color: #fff;
   transform: translateY(-7rem);
   margin-bottom: 2.4rem;
+  cursor: pointer;
 
   .title {
     font-size: 2.4rem;
