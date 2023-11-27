@@ -59,7 +59,6 @@ const Step4 = ({ data, setStep }) => {
         <span className="total-price">
           {period === 'monthly' ? `$${total}/mo` : `$${total}/yr`}
         </span>
-        {/* <span className="total-price">+$12/mo</span> */}
       </div>
     </StyledArticle>
   );
@@ -132,6 +131,11 @@ const StyledArticle = styled.article`
           color: #9699aa;
           font-size: 1.4rem;
           line-height: 2rem;
+        }
+
+        .change:hover {
+          color: #483eff;
+          cursor: pointer;
         }
       }
 
