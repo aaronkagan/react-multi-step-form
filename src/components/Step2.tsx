@@ -152,6 +152,7 @@ const StyledArticle = styled.article`
     border: 1px solid #d6d9e6;
     border-radius: 0.8rem;
     margin-bottom: 1.2rem;
+    cursor: pointer;
 
     .icon {
       width: 4rem;
@@ -203,6 +204,7 @@ const StyledArticle = styled.article`
     align-items: center;
     border-radius: 0.8rem;
     gap: 2.4rem;
+    cursor: pointer;
 
     .toggle-text {
       color: #9699aa;
