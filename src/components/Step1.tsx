@@ -145,6 +145,15 @@ const StyledArticle = styled.article`
     transform: unset;
     padding: 0;
     max-width: 45rem;
+
+    .title {
+      font-size: 3.2rem;
+    }
+
+    label {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
   }
 `;
 
