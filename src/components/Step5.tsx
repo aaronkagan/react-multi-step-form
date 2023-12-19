@@ -52,6 +52,15 @@ const StyledArticle = styled.article`
     transform: translateY(-50%);
     padding: 0;
     max-width: 45rem;
+
+    .img {
+      margin-bottom: 3.2rem;
+    }
+
+    .title {
+      font-size: 3.2rem;
+      margin-bottom: 1.4rem;
+    }
   }
 `;
 
