@@ -77,6 +77,11 @@ const StyledNav = styled.nav`
     background: none;
     border: none;
     cursor: pointer;
+    font: inherit;
+
+    &:hover {
+      color: #022959;
+    }
   }
 
   .next {
@@ -87,6 +92,11 @@ const StyledNav = styled.nav`
     cursor: pointer;
     width: 9.7rem;
     height: 4rem;
+    font: inherit;
+
+    &:hover {
+      background-color: #164a8a;
+    }
   }
 
   .next.confirm {
@@ -105,11 +115,21 @@ const StyledNav = styled.nav`
     right: 10rem;
     bottom: 1.6rem;
     transform: unset;
+    font-size: 1.6rem;
 
     .container {
       width: 100%;
       max-width: 45rem;
       margin: 0;
+    }
+
+    .previous {
+    }
+
+    .next {
+      width: 12.3rem;
+      height: 4.8rem;
+      border-radius: 0.8rem;
     }
   }
 `;
