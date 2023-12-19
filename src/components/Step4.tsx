@@ -197,8 +197,30 @@ const StyledArticle = styled.article`
     padding: 0;
     max-width: 45rem;
 
+    .title {
+      font-size: 3.2rem;
+    }
+
+    .card {
+      .card-top-container {
+        .card-text-container {
+          .card-top-title {
+            font-size: 1.6rem;
+          }
+        }
+
+        .card-top-price {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
     .total-container {
       max-width: 41.8rem;
+
+      .total-price {
+        font-size: 2rem;
+      }
     }
   }
 `;
