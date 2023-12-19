@@ -7,6 +7,7 @@ import Step4 from './components/Step4';
 import Step5 from './components/Step5';
 import StepsBar from './components/StepsBar';
 import GlobalStyle from './components/GlobalStyle';
+import styled from 'styled-components';
 
 function App() {
   const [step, setStep] = useState(1);
@@ -46,7 +47,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <main>
+      <StyledMain>
         <StepsBar step={step} />
         {step === 1 && (
           <Step1
@@ -80,9 +81,19 @@ function App() {
           data={data}
           handleStepOneInputError={handleStepOneInputError}
         />
-      </main>
+      </StyledMain>
     </>
   );
 }
+
+const StyledMain = styled.main`
+  @media all and (min-width: 1440px) {
+    position: relative;
+    background-color: #fff;
+    width: 94rem;
+    height: 60rem;
+    border-radius: 1rem;
+  }
+`;
 
 export default App;

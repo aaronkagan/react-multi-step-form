@@ -4,7 +4,7 @@ const Step5 = () => {
     <StyledArticle>
       <img
         className="img"
-        src="public/assets/images/icon-thank-you.svg"
+        src="/assets/images/icon-thank-you.svg"
         alt="Thank you icon"
       />
       <h1 className="title">Thank you!</h1>
@@ -43,6 +43,15 @@ const StyledArticle = styled.article`
     font-size: 1.6rem;
     line-height: 2.5rem;
     margin-bottom: 2.2rem;
+  }
+
+  @media all and (min-width: 1440px) {
+    position: absolute;
+    top: 50%;
+    right: 10rem;
+    transform: translateY(-50%);
+    padding: 0;
+    max-width: 45rem;
   }
 `;
 

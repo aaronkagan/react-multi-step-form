@@ -188,5 +188,18 @@ const StyledArticle = styled.article`
       line-height: 2rem;
     }
   }
+
+  @media all and (min-width: 1440px) {
+    position: absolute;
+    top: 5.6rem;
+    right: 10rem;
+    transform: unset;
+    padding: 0;
+    max-width: 45rem;
+
+    .total-container {
+      max-width: 41.8rem;
+    }
+  }
 `;
 export default Step4;

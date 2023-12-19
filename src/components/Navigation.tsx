@@ -96,6 +96,22 @@ const StyledNav = styled.nav`
   .next.confirm:hover {
     background-color: #928cff;
   }
+
+  @media all and (min-width: 1440px) {
+    position: absolute;
+    max-width: unset;
+    width: 45rem;
+    left: unset;
+    right: 10rem;
+    bottom: 1.6rem;
+    transform: unset;
+
+    .container {
+      width: 100%;
+      max-width: 45rem;
+      margin: 0;
+    }
+  }
 `;
 
 export default Navigation;

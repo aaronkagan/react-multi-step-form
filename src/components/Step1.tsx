@@ -137,6 +137,15 @@ const StyledArticle = styled.article`
     font-size: 1.6rem;
     color: #9699aa;
   }
+
+  @media all and (min-width: 1440px) {
+    position: absolute;
+    top: 5.6rem;
+    right: 10rem;
+    transform: unset;
+    padding: 0;
+    max-width: 45rem;
+  }
 `;
 
 export default Step1;

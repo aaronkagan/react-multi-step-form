@@ -27,7 +27,7 @@ const Step2 = ({ data, setData }) => {
     <StyledArticle>
       <h1 className="title">Select Your Plan</h1>
       <p className="text">You have the option of monthly or yearly billing.</p>
-      <div>
+      <div className="cards">
         <article
           className={data.plan === 'arcade' ? 'card active' : 'card'}
           onClick={handleSelectPlan}
@@ -35,7 +35,7 @@ const Step2 = ({ data, setData }) => {
         >
           <img
             className="icon"
-            src="public/assets/images/icon-arcade.svg"
+            src="/assets/images/icon-arcade.svg"
             alt="Arcade Icon"
           />
           <div className="card-text-container">
@@ -55,7 +55,7 @@ const Step2 = ({ data, setData }) => {
         >
           <img
             className="icon"
-            src="public/assets/images/icon-advanced.svg"
+            src="/assets/images/icon-advanced.svg"
             alt="Advanced Icon"
           />
           <div className="card-text-container">
@@ -75,7 +75,7 @@ const Step2 = ({ data, setData }) => {
         >
           <img
             className="icon"
-            src="public/assets/images/icon-pro.svg"
+            src="/assets/images/icon-pro.svg"
             alt="Pro Icon"
           />
           <div className="card-text-container">
@@ -237,6 +237,26 @@ const StyledArticle = styled.article`
     .toggle-yearly {
       right: 0.4rem;
       left: auto;
+    }
+  }
+
+  @media all and (min-width: 1440px) {
+    position: absolute;
+    top: 5.6rem;
+    right: 10rem;
+    transform: unset;
+    padding: 0;
+    max-width: 45rem;
+
+    .cards {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.8rem;
+
+      .card {
+        flex-direction: column;
+        flex: 1;
+      }
     }
   }
 `;

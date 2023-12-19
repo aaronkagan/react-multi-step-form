@@ -173,6 +173,15 @@ const StyledArticle = styled.article`
     background-color: #f8f9ff;
     border: 1px solid #483eff;
   }
+
+  @media all and (min-width: 1440px) {
+    position: absolute;
+    top: 5.6rem;
+    right: 10rem;
+    transform: unset;
+    padding: 0;
+    max-width: 45rem;
+  }
 `;
 
 export default Step3;
