@@ -1,6 +1,43 @@
 import styled from 'styled-components';
 
-const Navigation = ({ step, setStep, data, handleStepOneInputError }) => {
+interface NavigationProps {
+  step: number;
+  setStep: React.Dispatch<React.SetStateAction<number>>;
+  data: {
+    name: string;
+    email: string;
+    tel: string;
+    plan: string;
+    planMonthlyCost: number;
+    yearlyMultiplier: number;
+    period: string;
+    addOns: {
+      onlineServices: {
+        description: string;
+        monthlyPrice: number;
+        isAdded: boolean;
+      };
+      largerStorage: {
+        description: string;
+        monthlyPrice: number;
+        isAdded: boolean;
+      };
+      customizableProfile: {
+        description: string;
+        monthlyPrice: number;
+        isAdded: boolean;
+      };
+    };
+  };
+  handleStepOneInputError: () => void;
+}
+
+const Navigation: React.FC<NavigationProps> = ({
+  step,
+  setStep,
+  data,
+  handleStepOneInputError
+}) => {
   const handlePreviousStep = () => {
     if (step > 1) setStep((s) => s - 1);
   };
