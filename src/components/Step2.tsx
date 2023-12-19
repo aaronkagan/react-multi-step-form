@@ -256,6 +256,25 @@ const StyledArticle = styled.article`
       .card {
         flex-direction: column;
         flex: 1;
+        min-height: 16rem;
+        max-height: 18.3rem;
+        justify-content: space-between;
+
+        .icon {
+          margin-bottom: 3.3rem;
+        }
+
+        .card-text-container {
+          .card-title {
+            margin-bottom: 0.7rem;
+          }
+          .card-text {
+            margin-bottom: 0.6rem;
+          }
+
+          .free-months {
+          }
+        }
       }
     }
   }
