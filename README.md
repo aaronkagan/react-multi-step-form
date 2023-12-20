@@ -1,4 +1,4 @@
-# Multi-step form solution
+# Multi-step form
 
 ## Table of contents
 
