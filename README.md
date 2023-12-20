@@ -1,4 +1,4 @@
-# Multi-step form
+# React TypeScript Multi-step form
 
 ## Table of contents
 
