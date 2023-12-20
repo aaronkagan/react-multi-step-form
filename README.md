@@ -1,15 +1,19 @@
-# React Multi Step Form
+# Frontend Mentor - Multi-step form solution
+
+This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
 - [Overview](#overview)
+
   - [The challenge](#the-challenge)
   - [Links](#links)
   - [Screenshot](#screenshot)
+
 - [My process](#my-process)
+
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Useful resources](#useful-resources)
+
 - [Author](#author)
 
 ## Overview
@@ -25,45 +29,24 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 - Receive form validation messages if:
   - A field has been missed
-  - The email address is not formatted correctly
-  - A step is submitted, but no selection has been made
 
 ### Links
 
-- Live Demo:[``]()
+- Live Demo: [https://aaronkagandev-react-multistep-form-ts.netlify.app/](https://aaronkagandev-react-multistep-form-ts.netlify.app/)
 
 ### Screenshot
+
+![Desktop Preview](/desktop-preview.jpg)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML
+- StyledComponents
+- Mobile-first workflow
 - React
 - TypeScript
-- Styled Components
-- Mobile-first workflow
-
-### What I learned
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-Getting id of the closest parent with the a specific classname
-(or any other selector)
-
-```js
-const { id } = e.target.closest('.classname');
-```
-
-### Useful resources
 
 ## Author
 
