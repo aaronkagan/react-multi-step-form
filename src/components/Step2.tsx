@@ -4,16 +4,50 @@ const monthlyPrices = {
   arcade: 9,
   advanced: 12,
   pro: 15
-};
+} as const;
 
-const Step2 = ({ data, setData }) => {
-  function handleSelectPlan(e) {
-    const { id } = e.target.closest('.card');
-    setData((prevData) => ({
-      ...prevData,
-      plan: id,
-      planMonthlyCost: monthlyPrices[id]
-    }));
+interface Data {
+  name: string;
+  email: string;
+  tel: string;
+  plan: string;
+  planMonthlyCost: number;
+  yearlyMultiplier: number;
+  period: string;
+  addOns: {
+    onlineServices: {
+      description: string;
+      monthlyPrice: number;
+      isAdded: boolean;
+    };
+    largerStorage: {
+      description: string;
+      monthlyPrice: number;
+      isAdded: boolean;
+    };
+    customizableProfile: {
+      description: string;
+      monthlyPrice: number;
+      isAdded: boolean;
+    };
+  };
+}
+
+interface Step2Props {
+  data: Data;
+  setData: React.Dispatch<React.SetStateAction<Data>>;
+}
+
+const Step2: React.FC<Step2Props> = ({ data, setData }) => {
+  function handleSelectPlan(e: React.MouseEvent<HTMLDivElement>) {
+    const id = e.currentTarget.id as keyof typeof monthlyPrices;
+    if (id) {
+      setData((prevData) => ({
+        ...prevData,
+        plan: id,
+        planMonthlyCost: monthlyPrices[id]
+      }));
+    }
   }
 
   function handleSelectPeriod() {
