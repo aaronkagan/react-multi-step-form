@@ -102,7 +102,16 @@ const Step4: React.FC<Step4Props> = ({ data, setStep }) => {
   );
 };
 
-const AddOn = ({ addOn, data }) => {
+interface AddOnProps {
+  addOn: {
+    description: string;
+    monthlyPrice: number;
+    isAdded: boolean;
+  };
+  data: Data;
+}
+
+const AddOn: React.FC<AddOnProps> = ({ addOn, data }) => {
   return (
     <div className="card-bottom-container">
       <span className="card-bottom-text">{addOn.description}</span>
