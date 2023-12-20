@@ -1,10 +1,47 @@
 import styled from 'styled-components';
-const Step3 = ({ data, setData }) => {
+
+interface Data {
+  name: string;
+  email: string;
+  tel: string;
+  plan: string;
+  planMonthlyCost: number;
+  yearlyMultiplier: number;
+  period: string;
+  addOns: {
+    onlineServices: {
+      description: string;
+      monthlyPrice: number;
+      isAdded: boolean;
+    };
+    largerStorage: {
+      description: string;
+      monthlyPrice: number;
+      isAdded: boolean;
+    };
+    customizableProfile: {
+      description: string;
+      monthlyPrice: number;
+      isAdded: boolean;
+    };
+    [key: string]: {
+      description: string;
+      monthlyPrice: number;
+      isAdded: boolean;
+    };
+  };
+}
+
+interface Step3Props {
+  data: Data;
+  setData: React.Dispatch<React.SetStateAction<Data>>;
+}
+const Step3: React.FC<Step3Props> = ({ data, setData }) => {
   const onlineServices = data.addOns.onlineServices;
   const largerStorage = data.addOns.largerStorage;
   const customizableProfile = data.addOns.customizableProfile;
 
-  const handleToggleChecked = (addOn) => {
+  const handleToggleChecked = (addOn: string) => {
     setData((prevData) => ({
       ...prevData,
       addOns: {
