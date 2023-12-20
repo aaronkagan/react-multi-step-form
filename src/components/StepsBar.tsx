@@ -24,7 +24,9 @@ const StepsBar: React.FC<StepsBarProps> = ({ step }) => {
         <span
           className="steps-circle"
           style={
-            step >= 2 ? { backgroundColor: '#BEE2FD', border: 'none' } : {}
+            step >= 2
+              ? { backgroundColor: '#BEE2FD', border: 'none' }
+              : { color: '#fff' }
           }
         >
           2
@@ -38,7 +40,9 @@ const StepsBar: React.FC<StepsBarProps> = ({ step }) => {
         <span
           className="steps-circle"
           style={
-            step >= 3 ? { backgroundColor: '#BEE2FD', border: 'none' } : {}
+            step >= 3
+              ? { backgroundColor: '#BEE2FD', border: 'none' }
+              : { color: '#fff' }
           }
         >
           3
@@ -52,7 +56,9 @@ const StepsBar: React.FC<StepsBarProps> = ({ step }) => {
         <span
           className="steps-circle"
           style={
-            step >= 4 ? { backgroundColor: '#BEE2FD', border: 'none' } : {}
+            step >= 4
+              ? { backgroundColor: '#BEE2FD', border: 'none' }
+              : { color: '#fff' }
           }
         >
           4
