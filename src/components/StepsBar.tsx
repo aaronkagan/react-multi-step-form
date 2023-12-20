@@ -67,7 +67,7 @@ const StepsBar: React.FC<StepsBarProps> = ({ step }) => {
 };
 
 const StyledAside = styled.aside`
-  background-image: url('/public/assets/images/bg-sidebar-mobile.svg');
+  background-image: url('/assets/images/bg-sidebar-mobile.svg');
   background-size: cover;
   min-height: 17.2rem;
   display: flex;
@@ -91,7 +91,7 @@ const StyledAside = styled.aside`
   }
 
   @media all and (min-width: 1440px) {
-    background-image: url('/public/assets/images/bg-sidebar-desktop.svg');
+    background-image: url('/assets/images/bg-sidebar-desktop.svg');
     flex-direction: column;
     min-width: 27.4rem;
     height: 56.8rem;
