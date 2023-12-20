@@ -1,5 +1,43 @@
 import styled from 'styled-components';
-const Step4 = ({ data, setStep }) => {
+
+interface Data {
+  name: string;
+  email: string;
+  tel: string;
+  plan: string;
+  planMonthlyCost: number;
+  yearlyMultiplier: number;
+  period: string;
+  addOns: {
+    onlineServices: {
+      description: string;
+      monthlyPrice: number;
+      isAdded: boolean;
+    };
+    largerStorage: {
+      description: string;
+      monthlyPrice: number;
+      isAdded: boolean;
+    };
+    customizableProfile: {
+      description: string;
+      monthlyPrice: number;
+      isAdded: boolean;
+    };
+    [key: string]: {
+      description: string;
+      monthlyPrice: number;
+      isAdded: boolean;
+    };
+  };
+}
+
+interface Step4Props {
+  data: Data;
+  setStep: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const Step4: React.FC<Step4Props> = ({ data, setStep }) => {
   const period = data.period;
   const addedAddOns = Object.values(data.addOns).filter((elem) => elem.isAdded);
   let totalAddOnsCost = 0;
