@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-const StepsBar = ({ step }) => {
+interface StepsBarProps {
+  step: number;
+}
+const StepsBar: React.FC<StepsBarProps> = ({ step }) => {
   return (
     <StyledAside>
       <div className="step-container">
