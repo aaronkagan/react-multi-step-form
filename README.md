@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop Preview](/desktop-preview.jpg)
+![Desktop Preview](/multi-step-form.gif)
 
 ## My process
 
